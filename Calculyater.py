@@ -1,8 +1,7 @@
-from State import State
-from State1 import State1
+from FirstDigitInputState import State1
 class Calculater():
     def __init__(self):
-        self.State = State1()
+        self.State = State1
         self.n1=None
         self.n2=None
         self.operator=None
@@ -16,18 +15,19 @@ class Calculater():
         self.resultDigit=[]
         self.resultDigit.append(digit)
         self.outputDigit()
-
+    
     def perevodVintn1(self):
-        res=0
-        for i in range(len(self.resultDigit)):
-            res+=self.resultDigit[i]*(10**(len(self.resultDigit)-i))
-        self.n1 = res
+        self.n1=self.perevodVint()
 
     def perevodVintn2(self):
+        self.n2=self.perevodVint()
+
+    def perevodVint(self):
         res=0
         for i in range(len(self.resultDigit)):
             res+=self.resultDigit[i]*(10**(len(self.resultDigit)-i))
-        self.n2 = res
+        self.resultDigit=[]
+        return res
 
     def addOperator(self,operator):
         self.operator=operator
@@ -48,6 +48,6 @@ class Calculater():
     def outputDigit(self):
         for i in range(len(self.resultDigit)):
             print (self.resultDigit[1],end="")
-            
+
     def outputresult(self):
         print(self.result)

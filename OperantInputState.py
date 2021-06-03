@@ -1,12 +1,13 @@
-from State3 import State3
 from State import State
-from State4 import State4
+from SecondDigitInputState import State3
+from ResultState import State4
 
 class State2(State):
     def __init__(self, calculator):
         self.calculator = calculator
 
     def input_digit(self, digit):
+        self.calculator.addDigit(digit)
         self.calculator.setState(State3(self.calculator))
 
     def input_operation(self, operator):

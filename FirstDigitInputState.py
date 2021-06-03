@@ -1,6 +1,7 @@
-from State2 import State2
 from State import State
-from State4 import State4
+from OperantInputState import State2
+from ResultState import State4
+
 class State1(State):
 
     def input_digit(self, digit):
@@ -8,6 +9,7 @@ class State1(State):
 
     def input_operations(self,operator):
         self.calculator.perevodVintn1()
+        self.calculator.addOperator(operator)
         self.calculator.setState(State2(self.calculator))
 
     def input_equals(self):
