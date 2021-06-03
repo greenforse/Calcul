@@ -1,5 +1,5 @@
 from State import State
-from FirstDigitInputState import State1
+import FirstDigitInputState as f
 
 class State4(State):
     def __init__(self, calculator):
@@ -7,7 +7,7 @@ class State4(State):
 
     def input_digit(self, digit):
         self.calculator.addDigit(digit)
-        self.calculator.setState(State1(self.calculator)) 
+        self.calculator.setState(f.State1(self.calculator)) 
 
     def input_operation(self, operator):
         self.calculator.addOperator(operator)

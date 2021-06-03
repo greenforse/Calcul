@@ -1,6 +1,6 @@
 from State import State
-from OperantInputState import State2
-from ResultState import State4
+import OperantInputState as o
+import ResultState as r
 
 class State1(State):
 
@@ -10,7 +10,7 @@ class State1(State):
     def input_operations(self,operator):
         self.calculator.perevodVintn1()
         self.calculator.addOperator(operator)
-        self.calculator.setState(State2(self.calculator))
+        self.calculator.setState(o.State2(self.calculator))
 
     def input_equals(self):
-        self.calculator.setState(State4(self.calculator))
+        self.calculator.setState(r.State4(self.calculator))

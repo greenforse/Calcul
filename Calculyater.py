@@ -1,7 +1,7 @@
-from FirstDigitInputState import State1
+import FirstDigitInputState as f
 class Calculater():
     def __init__(self):
-        self.State = State1
+        self.State = f.State1
         self.n1=None
         self.n2=None
         self.operator=None

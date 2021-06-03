@@ -1,6 +1,6 @@
 from State import State
-from SecondDigitInputState import State3
-from ResultState import State4
+import SecondDigitInputState as s
+import ResultState as r
 
 class State2(State):
     def __init__(self, calculator):
@@ -8,10 +8,10 @@ class State2(State):
 
     def input_digit(self, digit):
         self.calculator.addDigit(digit)
-        self.calculator.setState(State3(self.calculator))
+        self.calculator.setState(s.State3(self.calculator))
 
     def input_operation(self, operator):
         self.calculator.addOperator(operator)
 
     def input_equals(self):
-        self.calculator.setState(State4(self.calculator))
+        self.calculator.setState(r.State4(self.calculator))
