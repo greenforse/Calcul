@@ -1,13 +1,14 @@
 from Calculyater import Calculater
 calk=Calculater()
 while True:
+    calkInput=(input("> "))
     try:
-        calkInput=int(input("> "))
         calk.input_digit(calkInput)
-    except:
-        calkInput=input("> ")
-        if calkInput == "+":
+    except ValueError:
+        if calkInput == "+" or calkInput=="-" or calkInput=="*" or calkInput =="/":
+            print("мы попали в плюс")
             calk.input_operation(calkInput)
-            print("Опять я тупорез")
-        if calkInput == "=":
+        elif calkInput == "=":
+            print("ввели равно")
             calk.input_equals()
+        else: print("Мы не попадаем в условие")

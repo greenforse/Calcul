@@ -28,7 +28,7 @@ class Calculater():
         for i in range(len(self.resultDigit)):
             res+=self.resultDigit[i]*(10**(len(self.resultDigit)-i))
         self.resultDigit=[]
-        return res
+        return int(res/10)
 
     def addOperator(self,operator):
         print("Добавили операцию")
@@ -37,6 +37,12 @@ class Calculater():
     def calculate(self):
         if self.operator=="+":
             self.result = self.n1 + self.n2
+        elif self.operator=="-":
+            self.result = self.n1 - self.n2
+        elif self.operator=="*":
+            self.result = self.n1 * self.n2  
+        elif self.operator=="/":
+            self.result = self.n1 // self.n2
 
     def input_digit(self, digit):
         self.State.input_digit(digit)
@@ -55,3 +61,5 @@ class Calculater():
 
     def outputresult(self):
         print(self.result)
+        self.n1=self.result
+        self.result=None

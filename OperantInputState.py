@@ -14,4 +14,5 @@ class State2(State):
         self.calculator.addOperator(operator)
 
     def input_equals(self):
+        self.calculator.otputresult()
         self.calculator.setState(r.State4(self.calculator))

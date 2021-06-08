@@ -9,14 +9,16 @@ class State3(State):
 
     def input_digit(self, digit):
         self.calculator.addDigit(digit)
-        self.calculator.setState(f.State1(self.calculator)) 
+        #self.calculator.setState(f.State1(self.calculator)) 
 
     def input_operation(self, operator):
         self.calculator.perevodVintn2()
         self.calculator.calculate()
         self.calculator.outputresult()
         self.calculator.setState(o.State2(self.calculator))
+
     def input_equals(self):
         self.calculator.perevodVintn2()
         self.calculator.calculate()
+        self.calculator.outputresult()
         self.calculator.setState(r.State4(self.calculator))
