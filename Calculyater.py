@@ -1,19 +1,20 @@
 import FirstDigitInputState as f
 class Calculater():
     def __init__(self):
-        self.State = f.State1
+        self.State = f.State1(self)
         self.n1=None
         self.n2=None
         self.operator=None
-        self.resultDigit=None
+        self.resultDigit=[]
         self.result=None
 
     def setState(self,State):
         self.State = State
 
     def addDigit(self,digit):
-        self.resultDigit=[]
-        self.resultDigit.append(digit)
+        #self.resultDigit=[]
+        self.resultDigit.append(int(digit))
+        #print(self.resultDigit)
         self.outputDigit()
     
     def perevodVintn1(self):
@@ -30,6 +31,7 @@ class Calculater():
         return res
 
     def addOperator(self,operator):
+        print("Добавили операцию")
         self.operator=operator
 
     def calculate(self):
@@ -40,14 +42,16 @@ class Calculater():
         self.State.input_digit(digit)
 
     def input_operation(self, operator):
+        print("Ввели операцию")
         self.State.input_operation(operator)
+        print("Ввели операцию")
 
     def input_equals(self):
         self.State.input_equals()
     
     def outputDigit(self):
         for i in range(len(self.resultDigit)):
-            print (self.resultDigit[1],end="")
+            print (self.resultDigit[i],end="")
 
     def outputresult(self):
         print(self.result)
