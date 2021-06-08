@@ -20,6 +20,9 @@ class Calculater():
     def perevodVintn1(self):
         self.n1=self.perevodVint()
 
+    def autoZapolnenieN2(self):
+        self.n2=self.n1
+        
     def perevodVintn2(self):
         self.n2=self.perevodVint()
 
